@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BeermeService } from './beerme.service';
+import { HeaderComponent } from './header.component';
 
 @Component({
 	selector: 'beerme',
-	template: `<h1>{{this.beerName}}</h1>
+	template: `	<beer-header></beer-header>
+				<h3>{{this.beerName}}</h3>
 				<ul *ngFor="let storeLocation of storeLocations">
 					<li>{{storeLocation.name}}</li>
 				</ul>`,
@@ -29,4 +31,4 @@ export class BeermeComponent implements OnInit {
 			this.storeLocations.push(this.beers[0].result[i]) ;			
 		}		
 	}
-}
+} 
