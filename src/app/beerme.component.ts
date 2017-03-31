@@ -6,21 +6,28 @@ import { HeaderComponent } from './header.component';
 @Component({
 	selector: 'beerme',
 	template: `	<beer-header></beer-header>
-				<h3>{{this.beerName}}</h3>
-				<ul *ngFor="let storeLocation of storeLocations">
-					<li>{{storeLocation.name}}</li>
-				</ul>`,
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3>{{this.beerName}}</h3>
+							<ul *ngFor="let storeLocation of storeLocations">
+								<li>{{storeLocation.name}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				`,
 })
 
 export class BeermeComponent implements OnInit {
-	beers = []; 
-	storeLocations = []; 
-	beerName: String;	
+	beers = [];
+	storeLocations = [];
+	beerName: String;
 	
 	constructor( private _beermeService: BeermeService ) {}
 
 	ngOnInit() {
-		this._beermeService.getBeer().subscribe( resBeermeData => this.parseResult(resBeermeData) );			
+		this._beermeService.getBeer().subscribe( resBeermeData => this.parseResult(resBeermeData) );
 	}
 
 	parseResult(beerResult: any[]) {
@@ -28,7 +35,7 @@ export class BeermeComponent implements OnInit {
 		this.beerName = this.beers[0].product.name;
 
 		for(var i=0; i < this.beers[0].result.length; i++) {
-			this.storeLocations.push(this.beers[0].result[i]) ;			
-		}		
+			this.storeLocations.push(this.beers[0].result[i]);
+		}
 	}
-} 
+}
