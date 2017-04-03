@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+    doToggleHamburger = false;
+    constructor(){}
     
+    toggleClass() {
+        if(this.doToggleHamburger){
+            this.doToggleHamburger = false;
+        } else {
+            this.doToggleHamburger = true;
+        }
+    }
 }

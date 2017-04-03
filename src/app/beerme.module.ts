@@ -4,11 +4,12 @@ import { HttpModule } from '@angular/http';
 
 import { BeermeComponent } from './beerme.component';
 import { HeaderComponent } from './header.component';
+import { HeroComponent } from './hero.component';
 import { BeermeService } from './beerme.service';
 
 @NgModule({
   imports: [ BrowserModule, HttpModule ],
-  declarations: [ BeermeComponent, HeaderComponent ],
+  declarations: [ BeermeComponent, HeaderComponent, HeroComponent ],
   providers: [ BeermeService ],
   bootstrap: [ BeermeComponent ]
 })

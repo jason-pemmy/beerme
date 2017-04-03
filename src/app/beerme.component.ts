@@ -6,7 +6,8 @@ import { HeaderComponent } from './header.component';
 @Component({
 	selector: 'beerme',
 	template: `	<beer-header></beer-header>
-				<div class="container">
+				<beer-search-hero></beer-search-hero>
+				<div class="container" [ngClass]="{'temp-container': isClassVisible }">
 					<div class="row">
 						<div class="col-sm-12">
 							<h3>{{this.beerName}}</h3>
@@ -23,6 +24,7 @@ export class BeermeComponent implements OnInit {
 	beers = [];
 	storeLocations = [];
 	beerName: String;
+	isClassVisible = false;
 	
 	constructor( private _beermeService: BeermeService ) {}
 
@@ -37,5 +39,9 @@ export class BeermeComponent implements OnInit {
 		for(var i=0; i < this.beers[0].result.length; i++) {
 			this.storeLocations.push(this.beers[0].result[i]);
 		}
+	}
+
+	toggleClass() {
+		console.log("*-*");
 	}
 }
