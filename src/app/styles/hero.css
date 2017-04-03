@@ -8,3 +8,22 @@ beer-search-hero .hero-background-container {
     height: 100vh;
     z-index: 1;
 }
+
+beer-search-hero input {
+    position: relative;
+    display: block;
+    top: 50%;
+    width: 50%;
+    height: 40px;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding-left: 35px;
+    background-image: url('../images/search-icon.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position-x: 3px;
+    background-position-y: 3px; 
+
+
+}
