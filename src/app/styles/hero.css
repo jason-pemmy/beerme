@@ -9,21 +9,41 @@ beer-search-hero .hero-background-container {
     z-index: 1;
 }
 
-beer-search-hero input {
+beer-search-hero .search-container {
     position: relative;
+    top: 50%;    
+}
+
+beer-search-hero .search-container input {    
     display: block;
-    top: 50%;
     width: 50%;
     height: 40px;
     max-width: 350px;
     margin: 0 auto;
     border-radius: 2px;
-    padding-left: 35px;
+    padding-left: 40px;
     background-image: url('../images/search-icon.png');
     background-repeat: no-repeat;
-    background-size: 30px 30px;
-    background-position-x: 3px;
-    background-position-y: 3px; 
+    background-size: 25px 25px;
+    background-position-x: 6px;
+    background-position-y: 6px; 
+}
 
+beer-search-hero .search-container .search-btn {
+    position: relative;
+    width: 100px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding-top: 8px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
 
+beer-search-hero .search-container .search-btn:hover {
+    background-color: #fff;
+    color: #000;
 }

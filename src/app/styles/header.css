@@ -46,7 +46,7 @@ beer-header .hamburger-menu {
 }
 
 beer-header .hamburger-menu:hover .hamburger-bar {
-    background-color: #000;
+    background-color: #000; 
 
 }
 
