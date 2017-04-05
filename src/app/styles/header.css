@@ -95,8 +95,6 @@ beer-header .hamburger-menu.open .hamburger-bar:nth-child(2) {
 
 beer-header .hamburger-menu.open .hamburger-bar:nth-child(3) {
   top: calc(50% - 1px);
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
+ 
   transform: rotate(-135deg);
 }

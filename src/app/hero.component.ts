@@ -24,7 +24,9 @@ export class HeroComponent implements OnInit {
         let name = this.newQuery.trim();        
         
         if (name.length > 1) {
-            console.log("***: "+ name);        
+            //show search button
+        } else {
+            // hide search button
         }
     }
 
