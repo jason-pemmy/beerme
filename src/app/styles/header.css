@@ -38,15 +38,14 @@ beer-header .header-container li:hover {
 beer-header .hamburger-menu {
     display: block;
     float: right;
-    width: 55px;
-    height: 35px;
-    margin: 8px 0 0 0;
-    padding: 5px;    
+    width: 45px;
+    height: 45px;    
+    padding: 10px 0 10px 0;    
     cursor: pointer;    
 }
 
 beer-header .hamburger-menu:hover .hamburger-bar {
-    background-color: #000; 
+    background-color: #bfbaba; 
 
 }
 
