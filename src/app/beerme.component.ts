@@ -7,17 +7,7 @@ import { HeaderComponent } from './header.component';
 	selector: 'beerme',
 	template: `	<beer-header></beer-header>
 				<beer-search-hero></beer-search-hero>
-				<div class="container" [ngClass]="{'temp-container': isClassVisible }">
-					<div class="row">
-						<div class="col-sm-12">
-							<h3>{{this.beerName}}</h3>
-							<ul *ngFor="let storeLocation of storeLocations">
-								<li>{{storeLocation.name}}</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				`,
+				<product-detail></product-detail>`,
 })
 
 export class BeermeComponent implements OnInit {
@@ -29,7 +19,7 @@ export class BeermeComponent implements OnInit {
 	constructor( private _beermeService: BeermeService ) {}
 
 	ngOnInit() {
-		this._beermeService.getBeer().subscribe( resBeermeData => this.parseResult(resBeermeData) );
+		//this._beermeService.getBeer().subscribe( resBeermeData => this.parseResult(resBeermeData) );
 	}
 
 	parseResult(beerResult: any[]) {

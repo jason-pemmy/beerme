@@ -6,12 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { BeermeComponent } from './beerme.component';
 import { HeaderComponent } from './header.component';
 import { HeroComponent } from './hero.component';
+import { ProductDetailComponent } from './product-detail.component';
 import { BeermeService } from './beerme.service';
 
 @NgModule({
   imports: [ BrowserModule, HttpModule, FormsModule ],
-  declarations: [ BeermeComponent, HeaderComponent, HeroComponent ],
-  providers: [ BeermeService ],
+  declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent ],
+  providers: [ BeermeService, ProductDetailComponent ],
   bootstrap: [ BeermeComponent ]
 })
 export class BeermeModule { } 

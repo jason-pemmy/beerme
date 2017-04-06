@@ -1,6 +1,6 @@
 <div class="hero-background-container">
     <div class="search-container">
-        <input type="text" name="search" [(ngModel)]="newQuery" (keyup)="checkSearchValue()" placeholder="Search LCBO inventory...">        
-        <div id="beer-search-box" class="search-btn" (click) = queryAPI()>Search</div>
+        <input type="text" name="search" [(ngModel)]="newQuery" (keyup)="checkSearchValue()" placeholder="Search LCBO inventory...">       
+        <div id="beer-search-box" class="search-btn" (click) = queryAPI() [class.show-btn] = doShowSearchBtn>Search</div>
     </div>    
 </div>
