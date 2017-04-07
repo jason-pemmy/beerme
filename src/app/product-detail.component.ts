@@ -14,7 +14,10 @@ export class ProductDetailComponent {
 
     setData (res: any) {        
         this.beer = res;		
-		this.beerName = this.beer[0];
-        console.log("name: "+ this.beer[0].result);
+		this.beerName = this.beer.result[0].name;
+        //console.log("name: "+ this.beerName);
+        for( var i=0; i < this.beer.result.length; i++ ) {
+            console.log("**-");
+        }
     }
 }

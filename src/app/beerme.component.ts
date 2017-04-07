@@ -18,9 +18,7 @@ export class BeermeComponent implements OnInit {
 	
 	constructor( private _beermeService: BeermeService ) {}
 
-	ngOnInit() {
-		//this._beermeService.getBeer().subscribe( resBeermeData => this.parseResult(resBeermeData) );
-	}
+	ngOnInit() {}
 
 	parseResult(beerResult: any[]) {
 		this.beers = beerResult;		
@@ -29,9 +27,5 @@ export class BeermeComponent implements OnInit {
 		for(var i=0; i < this.beers[0].result.length; i++) {
 			this.storeLocations.push(this.beers[0].result[i]);
 		}
-	}
-
-	toggleClass() {
-		console.log("*-*");
 	}
 }
