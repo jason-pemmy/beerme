@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'product-detail',
     templateUrl: 'app/templates/product-detail.html',
-    styleUrls: ['app/styles/product-detail.css']
+    styleUrls: ['app/styles/product-detail.css'],
+    changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class ProductDetailComponent {
     beer;
-    beerName: string;
+    @Input() public beerName = "duf";
 
     constructor() {}
 
-    setData (res: any) {        
-        this.beer = res;		
-		this.beerName = this.beer.result[0].name;
-        //console.log("name: "+ this.beerName);
-        for( var i=0; i < this.beer.result.length; i++ ) {
-            console.log("**-");
-        }
+    get rowData(): string {
+        console.debug('getting row data ' + this.beerName);        
+        return this.beerName;
+    }
+
+    setData (res: any) {
+        this.beer = res;  
+        this.beerName = this.beer.result[0].name;
+        console.log(this.beerName);      
+        //this.test = "new test"; 
     }
 }

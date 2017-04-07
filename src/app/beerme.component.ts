@@ -7,7 +7,7 @@ import { HeaderComponent } from './header.component';
 	selector: 'beerme',
 	template: `	<beer-header></beer-header>
 				<beer-search-hero></beer-search-hero>
-				<product-detail></product-detail>`,
+				<router-outlet></router-outlet>`,
 })
 
 export class BeermeComponent implements OnInit {
