@@ -1,9 +1,18 @@
- <div class="product-detail-container">
+ <div *ngFor="let prod of productAry" class="product-detail-container">
      <div class="container">
          <div class="row">
              <div class="col-sm-6">
                  <div class="product-img-container">
-                    <h3>{{beerName}}</h3>                     
+                    <img *ngIf="results" src="{{prod.productImage}}">                     
+                 </div>
+                 <div class="product-details-text">
+                    <h3 *ngIf="results">{{prod.productName}}</h3>
+                    <h4>{{prod.productType}}</h4>                    
+                    <span>                    
+                        <h5>{{prod.productProducer}}</h5>
+                        <h5>{{prod.productOrigin}}</h5>
+                    </span>
+                    <span></span>
                  </div>
              </div>
          </div>

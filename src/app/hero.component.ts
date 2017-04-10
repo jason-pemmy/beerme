@@ -15,10 +15,12 @@ export class HeroComponent implements OnInit {
     newQuery: String;
     doShowSearchBtn:Boolean = false;
     searchValue:String;
-    beer;
     beerName:string;
     resultsMatchingQuery:Number;
+    productQueryResults = [];
     product;
+    productAry = [];
+    results = false;
 
     constructor( private beermeService:BeermeService ) {}
 
@@ -42,7 +44,8 @@ export class HeroComponent implements OnInit {
     }
 
     parseResult(beerResult) {
-
+        this.productAry = [];
+        this.results = true;
         for ( var i = 0; i < beerResult.result.length; i++ ) {
             this.product = new ProductDetailModel(
                 beerResult.result[i].name,
@@ -52,9 +55,11 @@ export class HeroComponent implements OnInit {
                 beerResult.result[i].origin,
                 beerResult.result[i].inventory_count,
                 beerResult.result[i].producer_name,
-                beerResult.result[i].tertiary_category);             
+                beerResult.result[i].tertiary_category);
+
+            if ( !beerResult.result[i].is_dead ) { 
+                this.productAry.push(this.product);
+             }
         }
 	}
-
-
 }

@@ -1,3 +1,23 @@
 product-detail .product-detail-container {
     position: relative;
 } 
+
+product-detail .product-img-container {
+    float: left;
+}
+
+product-detail .product-img-container img {
+    width: 100%;
+    max-width: 175px;
+}
+
+product-detail .product-details-text {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+    product-detail .product-details-text {
+        float: left;
+        margin-top: 30px;
+    }
+}
