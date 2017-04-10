@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { BeermeService } from './beerme.service';
-import { ProductDetailComponent } from './product-detail.component';
+import { ProductDetailModel } from './product-details.model';
 
 @Component ({
     selector: 'beer-search-hero',
@@ -18,8 +18,9 @@ export class HeroComponent implements OnInit {
     beer;
     beerName:string;
     resultsMatchingQuery:Number;
+    product;
 
-    constructor( private beermeService:BeermeService, private prodDetail:ProductDetailComponent ) {}
+    constructor( private beermeService:BeermeService ) {}
 
     ngOnInit () {        
         this.searchInput = document.getElementById('beer-search-box');
@@ -37,11 +38,22 @@ export class HeroComponent implements OnInit {
     }
 
     queryAPI () {
-        this.beermeService.getBeer ( this.searchValue ).subscribe ( resBeermeData => this.prodDetail.setData( resBeermeData ) );
+        this.beermeService.getBeer ( this.searchValue ).subscribe ( resBeermeData => this.parseResult( resBeermeData ) );
     }
 
-    parseResult(beerResult: any[]) {
-		
+    parseResult(beerResult) {
+
+        for ( var i = 0; i < beerResult.result.length; i++ ) {
+            this.product = new ProductDetailModel(
+                beerResult.result[i].name,
+                beerResult.result[i].image_url,
+                beerResult.result[i].is_dead,
+                beerResult.result[i].price_in_cents,
+                beerResult.result[i].origin,
+                beerResult.result[i].inventory_count,
+                beerResult.result[i].producer_name,
+                beerResult.result[i].tertiary_category);             
+        }
 	}
 
 

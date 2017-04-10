@@ -1,27 +1,26 @@
-import { Component, NgZone, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'product-detail',
     templateUrl: 'app/templates/product-detail.html',
     styleUrls: ['app/styles/product-detail.css'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
     beer;
-    @Input() public beerName = "duf";
+    //beerName: string;
+    brewer: string;
+    beerImg: string; 
+    @Input() beerName = "duf";
 
-    constructor() {}
+    constructor() {this.beerName = "duf"}
 
-    get rowData(): string {
-        console.debug('getting row data ' + this.beerName);        
-        return this.beerName;
-    }
+    ngOnInit() {}
 
-    setData (res: any) {
-        this.beer = res;  
-        this.beerName = this.beer.result[0].name;
-        console.log(this.beerName);      
-        //this.test = "new test"; 
+    setData (res: any) {        
+        this.beer = res;		
+		this.beerName = this.beer.result[0].name;
+        console.log("name: "+ this.beerName);
     }
 }

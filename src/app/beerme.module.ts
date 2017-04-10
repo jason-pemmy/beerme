@@ -14,9 +14,9 @@ import { BeermeService } from './beerme.service';
   imports: [ BrowserModule, 
               HttpModule, 
               FormsModule,
-              RouterModule.forRoot([
+              /*RouterModule.forRoot([
 								{ path: 'product-detail', component: ProductDetailComponent }								
-							])], 
+							])*/], 
   declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent],
   providers: [ BeermeService, ProductDetailComponent ],
   bootstrap: [ BeermeComponent ]

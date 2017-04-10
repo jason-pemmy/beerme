@@ -7,10 +7,11 @@ import { HeaderComponent } from './header.component';
 	selector: 'beerme',
 	template: `	<beer-header></beer-header>
 				<beer-search-hero></beer-search-hero>
-				<router-outlet></router-outlet>`,
+				`,
 })
 
 export class BeermeComponent implements OnInit {
+	//<router-outlet></router-outlet>
 	beers = [];
 	storeLocations = [];
 	beerName: String;
