@@ -55,11 +55,13 @@ export class HeroComponent implements OnInit {
                 beerResult.result[i].origin,
                 beerResult.result[i].inventory_count,
                 beerResult.result[i].producer_name,
-                beerResult.result[i].tertiary_category);
+                beerResult.result[i].tertiary_category,
+                beerResult.result[i].package,
+                beerResult.result[i].id);
 
             if ( !beerResult.result[i].is_dead ) { 
                 this.productAry.push(this.product);
              }
         }
 	}
-}
+} 

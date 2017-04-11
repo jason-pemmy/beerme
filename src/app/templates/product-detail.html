@@ -1,6 +1,6 @@
- <div *ngFor="let prod of productAry" class="product-detail-container">
-     <div class="container">
-         <div class="row">
+ <div class="container ">
+     <div class="row">
+        <div *ngFor="let prod of productAry" class="product-detail-container">
              <div class="col-sm-6">
                  <div class="product-img-container">
                     <img *ngIf="results" src="{{prod.productImage}}">                     
@@ -11,10 +11,12 @@
                     <span>                    
                         <h5>{{prod.productProducer}}</h5>
                         <h5>{{prod.productOrigin}}</h5>
-                    </span>
-                    <span></span>
+                        <p><strong>{{prod.productPackage}}</strong></p>
+                    </span>                    
                  </div>
+                 <div class="find-stores-btn" (click)= findStoresWithProduct(prod.productID)>Find stores with product</div>
              </div>
          </div>
      </div>
  </div>
+ <!--<store-locations [storeLocationsAry] = "storeLocationsAry"></store-locations>-->

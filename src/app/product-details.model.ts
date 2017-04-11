@@ -6,7 +6,9 @@ export class ProductDetailModel {
         public productPrice: string,
         public productOrigin: string,
         public ProductInventoryCount: number,
-        public productProducer: string,
-        public productType: string) {
+        public productProducer: string,        
+        public productType: string,
+        public productPackage: string,
+        public productID: number) {
     }
 }
