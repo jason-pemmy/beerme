@@ -8,6 +8,7 @@ import { BeermeComponent } from './beerme.component';
 import { HeaderComponent } from './header.component';
 import { HeroComponent } from './hero.component';
 import { ProductDetailComponent } from './product-detail.component';
+import { StoreLocations } from './stores-near-location-with-product.component';
 import { BeermeService } from './beerme.service';
 
 @NgModule({
@@ -17,7 +18,7 @@ import { BeermeService } from './beerme.service';
               /*RouterModule.forRoot([
 								{ path: 'product-detail', component: ProductDetailComponent }								
 							])*/], 
-  declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent],
+  declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent, StoreLocations],
   providers: [ BeermeService, ProductDetailComponent ],
   bootstrap: [ BeermeComponent ]
 })

@@ -20,7 +20,7 @@ export class HeroComponent implements OnInit {
     productQueryResults = [];
     product;
     productAry = [];
-    results = false;
+    results = true;
 
     constructor( private beermeService:BeermeService ) {}
 
@@ -45,7 +45,7 @@ export class HeroComponent implements OnInit {
 
     parseResult(beerResult) {
         this.productAry = [];
-        this.results = true;
+        //this.results = true;
         for ( var i = 0; i < beerResult.result.length; i++ ) {
             this.product = new ProductDetailModel(
                 beerResult.result[i].name,

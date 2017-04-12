@@ -9,6 +9,5 @@ export class ProductDetailModel {
         public productProducer: string,        
         public productType: string,
         public productPackage: string,
-        public productID: number) {
-    }
+        public productID: number) {}
 }

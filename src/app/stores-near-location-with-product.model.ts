@@ -1,13 +1,12 @@
 export class StoresNearLocationWithProduct {
     constructor(
-        private storeName: string,
-        private address1: string,
-        private address2: string,
-        private city: string,
-        private telephone: string,
-        private quantity: string,
-        private distance: string,
-        private latitude: number,
-        private longitude: number
-    ) {}
-}
+        public storeName: string,
+        public address1: string,
+        public address2: string,
+        public city: string,
+        public telephone: string,
+        public quantity: string,
+        public distance: string,
+        public latitude: number,
+        public longitude: number) {}
+} 

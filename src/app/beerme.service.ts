@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BeermeService {
     private url:string = 'app/beerme_apidata/get-product-data.json';
-    private storeLocationUrl:string = 'app/beerme_apidata/get-product-data.json'; 
+    private storeLocationUrl:string = 'app/beerme_apidata/stores-near-point-with-product.json'; 
     
     constructor( private http: Http ) {}
     

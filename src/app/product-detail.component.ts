@@ -1,14 +1,11 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
-
-import { ProductDetailModel } from './product-details.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { StoresNearLocationWithProduct } from './stores-near-location-with-product.model';
 import { BeermeService } from './beerme.service';
 
 @Component({
     selector: 'product-detail', 
     templateUrl: 'app/templates/product-detail.html',
-    styleUrls: ['app/styles/product-detail.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['app/styles/product-detail.css']
 })
 
 export class ProductDetailComponent implements OnInit {
@@ -20,28 +17,27 @@ export class ProductDetailComponent implements OnInit {
 
     constructor( private beermeService:BeermeService ) {}
 
-    ngOnInit() {}
+    ngOnInit() {} 
 
     findStoresWithProduct (prodId) {
-        console.log("prodID: "+ prodId);
-        this.beermeService.getProductLocation(prodId).subscribe ( resProductLocation => this.parseResult( resProductLocation ) );
+        this.beermeService.getProductLocation(prodId).subscribe ( resProductLocation => this.parseResult( resProductLocation ) );        
     }
 
-    parseResult (prodLocation) {
-        this.productAry = [];
-        this.results = true;
-        for ( var i = 0; i < prodLocation.result.length; i++ ) {
-            this.productLocation = new ProductDetailModel(
+    parseResult (prodLocation) {        
+        this.productLocation = [];
+        for ( var i = 0; i < prodLocation.result.length; i++ ) {            
+            this.productLocation = new StoresNearLocationWithProduct(
                 prodLocation.result[i].name,
-                prodLocation.result[i].image_url,
-                prodLocation.result[i].is_dead,
-                prodLocation.result[i].price_in_cents,
-                prodLocation.result[i].origin,
-                prodLocation.result[i].inventory_count,
-                prodLocation.result[i].producer_name,
-                prodLocation.result[i].tertiary_category,
-                prodLocation.result[i].package,
-                prodLocation.result[i].id);
+                prodLocation.result[i].address1,
+                prodLocation.result[i].address2,
+                prodLocation.result[i].city,
+                prodLocation.result[i].telephone,
+                prodLocation.result[i].quantity,
+                prodLocation.result[i].distance,
+                prodLocation.result[i].latitude,
+                prodLocation.result[i].longitude);
+
+            this.storeLocationsAry.push(this.productLocation);            
         }
     }
 }
