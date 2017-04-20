@@ -3,6 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BeermeService } from './beerme.service';
 import { ProductDetailModel } from './product-details.model';
 
+import { ScrollToService } from './scrollTo.service';
+
 @Component ({
     selector: 'beer-search-hero',
     templateUrl: 'app/templates/hero.html',
@@ -22,7 +24,7 @@ export class HeroComponent implements OnInit {
     productAry = [];
     results = true;
 
-    constructor( private beermeService:BeermeService ) {}
+    constructor( private beermeService:BeermeService, private scrollService: ScrollToService ) {}
 
     ngOnInit () {        
         this.searchInput = document.getElementById('beer-search-box');
@@ -61,6 +63,7 @@ export class HeroComponent implements OnInit {
 
             if ( !beerResult.result[i].is_dead ) { 
                 this.productAry.push(this.product);
+                this.scrollService.scrollTo("#prouct-detail");
              }
         }
 	}

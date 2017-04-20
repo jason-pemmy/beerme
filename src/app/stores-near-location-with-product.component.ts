@@ -10,7 +10,7 @@ import { StoresNearLocationWithProduct } from './stores-near-location-with-produ
 }) 
 
 export class StoreLocations {
-    @Input() storeLocationsAry;    
+    @Input() storeLocationsAry;
 
     constructor(){}
 }

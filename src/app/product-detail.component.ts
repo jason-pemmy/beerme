@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StoresNearLocationWithProduct } from './stores-near-location-with-product.model';
 import { BeermeService } from './beerme.service';
+import { ScrollToService } from './scrollTo.service';
 
 @Component({
     selector: 'product-detail', 
@@ -11,16 +12,18 @@ import { BeermeService } from './beerme.service';
 export class ProductDetailComponent implements OnInit {
     productLocation;
     storeLocationsAry = [];
+    selectedProductID: any;
 
     @Input() productAry; 
     @Input() results;    
 
-    constructor( private beermeService:BeermeService ) {}
+    constructor( private beermeService:BeermeService, private scrollService: ScrollToService ) {}
 
     ngOnInit() {} 
 
-    findStoresWithProduct (prodId) {
-        this.beermeService.getProductLocation(prodId).subscribe ( resProductLocation => this.parseResult( resProductLocation ) );        
+    findStoresWithProduct (prodId) {  
+        this.selectedProductID = prodId;
+        this.beermeService.getProductLocation(prodId).subscribe( resProductLocation => this.parseResult( resProductLocation ) );      
     }
 
     parseResult (prodLocation) {        
@@ -37,7 +40,8 @@ export class ProductDetailComponent implements OnInit {
                 prodLocation.result[i].latitude,
                 prodLocation.result[i].longitude);
 
-            this.storeLocationsAry.push(this.productLocation);            
+            this.storeLocationsAry.push(this.productLocation); 
+            this.scrollService.scrollTo("#store-locations");           
         }
     }
 }
