@@ -4,13 +4,14 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule }  from '@angular/router';
 
-import { BeermeComponent } from './beerme.component';
-import { HeaderComponent } from './header.component';
-import { HeroComponent } from './hero.component';
-import { ProductDetailComponent } from './product-detail.component';
-import { StoreLocations } from './stores-near-location-with-product.component';
-import { BeermeService } from './beerme.service';  
-import { ScrollToService } from './scrollTo.service';
+import { BeermeComponent } from './components/beerme.component';
+import { HeaderComponent } from './components/header.component';
+import { HeroComponent } from './components/hero.component';
+import { ProductDetailComponent } from './components/product-detail.component';
+import { StoreLocations } from './components/stores-near-location-with-product.component';
+import { BeermeService } from './services/beerme.service';  
+import { ScrollToService } from './services/scrollTo.service';
+import { GeolocationService } from './services/geolocation.service';
 
 @NgModule({
   imports: [ BrowserModule, 
@@ -20,7 +21,7 @@ import { ScrollToService } from './scrollTo.service';
 								{ path: 'product-detail', component: ProductDetailComponent }								
 							])*/], 
   declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent, StoreLocations],
-  providers: [ BeermeService, ProductDetailComponent, ScrollToService ],
+  providers: [ BeermeService, ProductDetailComponent, ScrollToService, GeolocationService ],
   bootstrap: [ BeermeComponent ]
 })
 export class BeermeModule { } 

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ProductDetailComponent } from './product-detail.component';
-import { StoresNearLocationWithProduct } from './stores-near-location-with-product.model';
+import { StoresNearLocationWithProduct } from '../models/stores-near-location-with-product.model';
 
 @Component({
     selector: 'store-locations',
@@ -12,5 +12,5 @@ import { StoresNearLocationWithProduct } from './stores-near-location-with-produ
 export class StoreLocations {
     @Input() storeLocationsAry;
 
-    constructor(){}
+    constructor(){} 
 }

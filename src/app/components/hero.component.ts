@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { BeermeService } from './beerme.service';
-import { ProductDetailModel } from './product-details.model';
-
-import { ScrollToService } from './scrollTo.service';
+import { ProductDetailModel } from '../models/product-details.model';
+import { BeermeService } from '../services/beerme.service';
+import { ScrollToService } from '../services/scrollTo.service';
 
 @Component ({
     selector: 'beer-search-hero',

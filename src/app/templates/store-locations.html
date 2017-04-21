@@ -1,3 +1,14 @@
-<ul >
-    <li *ngFor= "let location of storeLocationsAry">{{location.storeName}}</li> 
-</ul>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-xs-6 header-row"><strong>Store address:</strong></div>
+            <div class="col-xs-3 header-row"><strong>Distance from you:</strong></div>
+            <div class="col-xs-3 header-row"><strong>Inventory on hand:</strong></div>
+            <div class="location-data clearfix" *ngFor= "let location of storeLocationsAry">
+                <div class="col-xs-6 ">{{location.address1}} {{location.city}}</div>
+                <div class="col-xs-3"><strong>{{location.distance}}</strong> km's</div>
+                <div class="col-xs-3"><strong>{{location.quantity}}</strong></div>            
+            </div>            
+        </div>        
+    </div>
+</div>
