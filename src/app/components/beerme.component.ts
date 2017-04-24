@@ -11,7 +11,6 @@ import { HeaderComponent } from './header.component';
 })
 
 export class BeermeComponent implements OnInit {
-	//<router-outlet></router-outlet>
 	beers = [];
 	storeLocations = [];
 	beerName: String;

@@ -36,21 +36,22 @@ beer-header .header-container li:hover {
 }
 
 beer-header .hamburger-menu {
+    position: absolute;
     display: block;
-    float: right;
+    right: 15px;
     width: 45px;
     height: 45px;    
     padding: 10px 0 10px 0;    
-    cursor: pointer;    
+    cursor: pointer;
+    z-index: 3;    
 }
 
 beer-header .hamburger-menu:hover .hamburger-bar {
     background-color: #bfbaba; 
-
 }
 
 @media screen and (min-width: 768px) {
-    beer-header .hamburger-menu {display: none;}
+    /*beer-header .hamburger-menu {display: none;}*/
 }
 
 beer-header .hamburger-menu .hamburger-bar {
@@ -79,6 +80,14 @@ beer-header .hamburger-menu .hamburger-bar:nth-child(2) {
 
 beer-header .hamburger-menu .hamburger-bar:last-child {
     top: 100%;
+}
+
+beer-header .hamburger-menu.open {
+    right: 25px;    
+}
+
+beer-header .hamburger-menu.open .hamburger-bar {
+    /*background-color: #000;    */
 }
 
 beer-header .hamburger-menu.open .hamburger-bar:nth-child(1) {

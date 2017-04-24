@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/header.component';
 import { HeroComponent } from './components/hero.component';
 import { ProductDetailComponent } from './components/product-detail.component';
 import { StoreLocations } from './components/stores-near-location-with-product.component';
+import { MobileMenu } from './components/mobile-menu.component';
+ 
 import { BeermeService } from './services/beerme.service';  
 import { ScrollToService } from './services/scrollTo.service';
 import { GeolocationService } from './services/geolocation.service';
@@ -20,7 +22,7 @@ import { GeolocationService } from './services/geolocation.service';
               /*RouterModule.forRoot([
 								{ path: 'product-detail', component: ProductDetailComponent }								
 							])*/], 
-  declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent, StoreLocations],
+  declarations: [ BeermeComponent, HeaderComponent, HeroComponent, ProductDetailComponent, StoreLocations, MobileMenu],
   providers: [ BeermeService, ProductDetailComponent, ScrollToService, GeolocationService ],
   bootstrap: [ BeermeComponent ]
 })
