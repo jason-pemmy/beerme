@@ -16,6 +16,8 @@ export class ProductDetailComponent implements OnInit {
     storeLocationsAry = [];
     selectedProductID: any;
     distInkms;
+    num;
+    gotResults = false;
 
     @Input() productAry; 
     @Input() results;    
@@ -38,7 +40,8 @@ export class ProductDetailComponent implements OnInit {
     parseResult (prodLocation) {        
         this.productLocation = [];
         this.storeLocationsAry = [];
-        
+        this.gotResults = true;
+
         for ( var i = 0; i < prodLocation.result.length; i++ ) {
             this.productLocation = new StoresNearLocationWithProduct(
                 prodLocation.result[i].name,
@@ -58,8 +61,7 @@ export class ProductDetailComponent implements OnInit {
         this.convertMetersToKms(this.storeLocationsAry);
     }
 
-    convertMetersToKms(ary) {
-        var num;
+    convertMetersToKms(ary) {        
         for(var i = 0; i < ary.length;i++) {
             this.num = ary[i].distance / 1000;
             ary[i].distance = Math.round(this.num * 100) / 100; 

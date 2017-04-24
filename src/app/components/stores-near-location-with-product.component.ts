@@ -11,6 +11,7 @@ import { StoresNearLocationWithProduct } from '../models/stores-near-location-wi
 
 export class StoreLocations {
     @Input() storeLocationsAry;
+    @Input() gotResults;
 
     constructor(){} 
 }

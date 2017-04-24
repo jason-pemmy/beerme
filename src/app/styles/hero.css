@@ -30,15 +30,16 @@ beer-search-hero .search-container input {
 
 beer-search-hero .search-container .search-btn {
     position: relative;
-    width: 100px;
-    height: 35px;
+    width: 125px;
+    height: 45px;
     margin: 0 auto;
     margin-top: 25px;
     text-align: center;
     background-color: #000;
     color: #fff;
-    padding-top: 8px;
+    padding-top: 11px;
     cursor: pointer;
+    border-radius: 3px;
     opacity: 0;
     visibility: hidden;
     transition: all .2s ease-in-out;
