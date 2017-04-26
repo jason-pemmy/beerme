@@ -1,14 +1,14 @@
-<div class="main-container">
+<div class="main-container" [class.open] = doToggleHamburger>
     <div class="row content-container">
         <div class="col-sm-8 menu-column">
-            <div class="left-menu" >
-                
+            <div class="left-menu" [class.open] = doToggleHamburger>
+
             </div>
         </div>
         <div class="col-sm-4 menu-column">
-            <div class="right-menu">
+            <div class="right-menu" [class.open] = doToggleHamburger>
 
             </div>
         </div>
     </div>
-</div>
+</div> 

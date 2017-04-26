@@ -1,22 +1,33 @@
 import { Component, Input } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+//import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'mobile-menu',
     templateUrl: 'app/templates/mobile-menu.html',
-    styleUrls: ['app/styles/mobile-menu.css'],     
+    styleUrls: ['app/styles/mobile-menu.css'],
+    /*animations: [
+        trigger('heroState', [
+            state('inactive', style({
+                opacity: 0
+            })),
+            state('active',   style({
+                opacity: 1
+            })),
+            transition('inactive => active', animate('500ms ease-in')),
+            transition('active => inactive', animate('500ms ease-out'))
+        ])
+    ] */    
 })
 
 export class MobileMenu {
     @Input() doToggleHamburger;
-
-    //leftMenu = document.getElementsByClassName("left-menu")[0];
-    //righttMenu = document.getElementsByClassName("right-menu")[0];
+    state: string;
 
     constructor(){
         if(this.doToggleHamburger) {
-            //console.log("**--**");
-            //this.leftMenu.className += "open";
+            this.state = 'inactive';
+        } else {
+            this.state = 'active';
         }
     }
 }
