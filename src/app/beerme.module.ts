@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule }  from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { BeermeComponent } from './components/beerme.component';
 import { HeaderComponent } from './components/header.component';
@@ -16,7 +17,8 @@ import { ScrollToService } from './services/scrollTo.service';
 import { GeolocationService } from './services/geolocation.service';
 
 @NgModule({
-  imports: [ BrowserModule, 
+  imports: [ BrowserModule,
+              BrowserAnimationsModule, 
               HttpModule, 
               FormsModule,
               /*RouterModule.forRoot([

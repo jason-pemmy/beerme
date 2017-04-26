@@ -107,3 +107,9 @@ beer-header .hamburger-menu.open .hamburger-bar:nth-child(3) {
  
   transform: rotate(-135deg);
 }
+
+beer-header .somediv {
+    width: 50px;
+    height: 40px;
+    background-color: #fff;
+}
