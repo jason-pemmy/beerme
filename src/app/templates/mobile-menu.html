@@ -2,8 +2,22 @@
     <div class="row content-container">
         <div class="col-sm-8 menu-column">
             <div class="left-menu" [class.open] = doToggleHamburger>
-
-            </div>
+                <div class="product-feature-container">
+                    <div *ngIf="results" class="product-feature-details">
+                        <span>{{productFeatureAry[0].productName}}</span>
+                    </div>
+                    <div *ngIf="results" class="featured-product-image-container" [style.background-image]="'url(' + productFeatureAry[0].productImage + ')'">                        
+                    </div>                    
+                    <div class="product-feature-divider"></div>
+                </div>                
+                <div class="product-feature-container">
+                    <div *ngIf="results" class="product-feature-details">
+                        <span>{{productFeatureAry[1].productName}}</span>
+                    </div>
+                    <div *ngIf="results" class="featured-product-image-container" [style.background-image]="'url(' + productFeatureAry[1].productImage + ')'">                        
+                    </div>                    
+                </div>                
+            </div>            
         </div>
         <div class="col-sm-4 menu-column">
             <div class="right-menu" [class.open] = doToggleHamburger>

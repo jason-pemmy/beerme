@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 //import { trigger, state, style, animate, transition } from '@angular/animations';
+
+import { ProductDetailModel } from '../models/product-details.model';
+import { BeermeService } from '../services/beerme.service';
 
 @Component({
     selector: 'mobile-menu',
@@ -19,15 +22,44 @@ import { Component, Input } from '@angular/core';
     ] */    
 })
 
-export class MobileMenu {
+export class MobileMenu implements OnInit {
     @Input() doToggleHamburger;
     state: string;
+    productFeatureAry = [];
+    productDetailModel;
+    results = false;
 
-    constructor(){
+    ngOnInit() {
+        this.beermeService.getProductFeature().subscribe(resProductFeature => this.parseProductFeatureData(resProductFeature));
+    }
+    
+    constructor( private beermeService:BeermeService ) {
         if(this.doToggleHamburger) {
-            this.state = 'inactive';
+            //this.state = 'inactive';
         } else {
-            this.state = 'active';
+            //this.state = 'active';
         }
     }
-}
+
+    parseProductFeatureData ( beerResult ) {
+        for ( var i = 0; i < beerResult.result.length; i++ ) {
+            this.productDetailModel = new ProductDetailModel(
+                beerResult.result[i].name,
+                beerResult.result[i].image_url,
+                beerResult.result[i].is_dead,
+                beerResult.result[i].price_in_cents,
+                beerResult.result[i].origin,
+                beerResult.result[i].inventory_count,
+                beerResult.result[i].producer_name,
+                beerResult.result[i].tertiary_category,
+                beerResult.result[i].package,
+                beerResult.result[i].id);
+
+            if ( !beerResult.result[i].is_dead ) {                 
+                this.productFeatureAry.push(this.productDetailModel);
+                this.results = true;
+             }
+        }
+        console.log("*/*/*: "+ this.productFeatureAry[0].productImage);
+    }
+} 

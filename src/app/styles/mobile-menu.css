@@ -47,13 +47,77 @@ mobile-menu .left-menu {
     height: 0;
     visibility: hidden;
     opacity: 1;    
-    transition: all .6s ease-in-out}
+    transition: all .6s ease-in-out;
+}
 
 mobile-menu .left-menu.open {    
     height: 100vh;
     visibility: visible;
     opacity: 1;
 }
+
+mobile-menu .left-menu .product-feature-container {    
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    background-color: #fff; 
+    visibility: hidden;
+    opacity: 0;
+    transition: all .8s ease-in-out;
+}
+
+mobile-menu .left-menu.open .product-feature-container {    
+    visibility: visible;
+    opacity: 1;
+    color: #000;
+    padding-left: 25px;
+}
+
+mobile-menu .left-menu .product-feature-container .featured-product-image-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(0.6);
+    cursor: pointer;
+    transition: opacity .3s ease-in-out .2s, transform .3s ease-in-out;
+}
+
+mobile-menu .left-menu.open .product-feature-container .featured-product-image-container {
+    opacity: 0.6;
+    transform: scale(0.8);
+}
+
+mobile-menu .left-menu.open .product-feature-container .featured-product-image-container:hover {
+    opacity: 1;
+    transform: scale(0.9);
+}
+
+mobile-menu .left-menu .product-feature-container .product-feature-details {
+    position: relative;
+    top: 5px;
+    left: 20px;
+    width: 70%;
+    font-size: 2rem;
+}
+
+mobile-menu .left-menu .product-feature-container .product-feature-divider {
+    position: absolute;
+    top: 50%;
+    width: 75%;
+    height: 2px;
+    left: calc(50% - 37.5%);
+    background-color: burlywood;
+    transform: scale(0);
+    transition: all .6s ease-in-out .4s;
+}  
+
+mobile-menu .left-menu.open .product-feature-container .product-feature-divider {
+    transform: scale(1);
+} 
 
 mobile-menu .right-menu {
     position: absolute;

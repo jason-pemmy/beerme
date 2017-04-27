@@ -6,12 +6,18 @@ import 'rxjs/add/operator/map';
 export class BeermeService {    
     private url:string = 'app/beerme_apidata/get-product-data.json';    
     private storeLocationUrl:string = 'app/beerme_apidata/stores-near-point-with-product.json'; 
-    
+    private productFeature:string = 'app/beerme_apidata/product-feature.json';
+
     constructor( private http: Http ) {}
     
     getBeer(query) {
         //this.url = 'http://lcboapi.com/products?q='+query;
         return this.http.get ( this.url ).map (( response:Response ) => response.json() );
+    }
+
+    getProductFeature() {
+        //this.url = 'http://lcboapi.com/products?q='+query;
+        return this.http.get ( this.productFeature ).map (( response:Response ) => response.json() );
     }
 
     getProductLocation( productId:number, location:any ) {
