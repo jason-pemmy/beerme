@@ -1,6 +1,6 @@
 <div class="main-container" [class.open] = doToggleHamburger>
     <div class="row content-container">
-        <div class="col-sm-8 menu-column">
+        <div class="col-sm-7 menu-column">
             <div class="left-menu" [class.open] = doToggleHamburger>
                 <div class="product-feature-container">
                     <div *ngIf="results" class="product-feature-details">
@@ -19,9 +19,11 @@
                 </div>                
             </div>            
         </div>
-        <div class="col-sm-4 menu-column">
+        <div class="col-sm-5 menu-column">
             <div class="right-menu" [class.open] = doToggleHamburger>
-
+                <div class="right-menu-header">
+                    <img src="../app/images/hops-icon.png" />
+                </div>
             </div>
         </div>
     </div>

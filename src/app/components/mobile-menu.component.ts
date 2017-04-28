@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 //import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import { ProductDetailModel } from '../models/product-details.model';
+import { ProductDetailModel } from '../models/product-details.model'; 
 import { BeermeService } from '../services/beerme.service';
 
 @Component({
@@ -60,6 +60,5 @@ export class MobileMenu implements OnInit {
                 this.results = true;
              }
         }
-        console.log("*/*/*: "+ this.productFeatureAry[0].productImage);
     }
 } 
