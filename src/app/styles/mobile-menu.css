@@ -12,10 +12,6 @@ mobile-menu .main-container {
     transition: all .3s ease-in-out;
 }
 
-mobile-menu .main-container .menu-container {
-    
-}
-
 mobile-menu .main-container.open {
     visibility: visible;
     opacity: 1; 
@@ -61,49 +57,57 @@ mobile-menu .left-menu.open {
     box-shadow: 7px 2px 9px -6px rgba(0,0,0,0.51);
 }
 
+mobile-menu .left-menu .left-menu-header {
+    width: 100%;
+    height: 35px;
+    padding: 5px 0 10px 30px;
+    background-color: #919e94;
+    font-size: 1.8rem;
+}
+
 mobile-menu .left-menu .product-feature-container {    
     width: 100%;
-    height: 50%;
+    height: 47%;
     padding: 10px;
     background-color: #fff; 
     visibility: hidden;
     opacity: 0;
+    cursor: pointer;
     transition: all .8s ease-in-out;
-}
+}  
 
 mobile-menu .left-menu.open .product-feature-container {    
     visibility: visible;
     opacity: 1;
-    color: #000;
-    padding-left: 25px;
+    color: #000;   
 }
 
 mobile-menu .left-menu .product-feature-container .featured-product-image-container {
     width: 100%;
     height: 100%;
     padding: 10px;
+    margin-top: -50px;
     background-position: center;
     background-size: contain; 
     background-repeat: no-repeat;
     opacity: 0;
-    transform: scale(0.6);
-    cursor: pointer;
-    transition: opacity .3s ease-in-out .2s, transform .3s ease-in-out;
+    transform: scale(0.5);    
+    transition: opacity .3s ease-in-out .2s, transform .6s cubic-bezier(.17,.67,.32,1.6);
 }
 
 mobile-menu .left-menu.open .product-feature-container .featured-product-image-container {
     opacity: 0.6;
-    transform: scale(0.7);
+    transform: scale(0.6);
 }
 
-mobile-menu .left-menu.open .product-feature-container .featured-product-image-container:hover {
+mobile-menu .left-menu.open .product-feature-container:hover .featured-product-image-container {
     opacity: 1;
-    transform: scale(0.8);
+    transform: scale(0.7);
 }
 
 mobile-menu .left-menu .product-feature-container .product-feature-details {
     position: relative;
-    top: 5px;
+    top: 10px;
     left: 20px;
     width: 70%;
     font-size: 2rem;
@@ -130,7 +134,7 @@ mobile-menu .right-menu {
     height: 100vh;
     margin-left: 0;    
     margin-top: 100vh;
-    background-color: #fff;
+    background-color: #f7fdf8;
     visibility: visible;
     opacity: 1;
     -webkit-box-shadow: 7px 2px 9px -6px rgba(0,0,0,0.51);
@@ -153,5 +157,21 @@ mobile-menu .right-menu .right-menu-header img {
     display: inline-block;
     width: 60%; 
     padding-top: 60px;
-    opacity: 0.4;
+    opacity: 0.2;
 }
+
+mobile-menu .right-menu .right-menu-navigation-divider {
+    position: relative;
+    width: 75%;
+    height: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: calc(50% - 37.5%);
+    background-color: burlywood;
+    transform: scale(0);
+    transition: all .6s ease-in-out .4s;
+}
+
+mobile-menu .right-menu.open .right-menu-navigation-divider {
+    transform: scale(1);
+} 

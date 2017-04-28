@@ -2,9 +2,13 @@
     <div class="row content-container">
         <div class="col-sm-7 menu-column">
             <div class="left-menu" [class.open] = doToggleHamburger>
+                <div class="left-menu-header">
+                   <div class="left-menu-header-text">Featured products</div> 
+                </div>
                 <div class="product-feature-container">
                     <div *ngIf="results" class="product-feature-details">
                         <span>{{productFeatureAry[0].productName}}</span>
+                        <h5>{{productFeatureAry[0].productType}}: {{productFeatureAry[0].productOrigin}}</h5>
                     </div>
                     <div *ngIf="results" class="featured-product-image-container" [style.background-image]="'url(' + productFeatureAry[0].productImage + ')'">                        
                     </div>                    
@@ -13,6 +17,7 @@
                 <div class="product-feature-container">
                     <div *ngIf="results" class="product-feature-details">
                         <span>{{productFeatureAry[1].productName}}</span>
+                        <h5>{{productFeatureAry[1].productType}}: {{productFeatureAry[1].productOrigin}}</h5>
                     </div>
                     <div *ngIf="results" class="featured-product-image-container" [style.background-image]="'url(' + productFeatureAry[1].productImage + ')'">                        
                     </div>                    
@@ -24,7 +29,12 @@
                 <div class="right-menu-header">
                     <img src="../app/images/hops-icon.png" />
                 </div>
-            </div>
+                <div class="right-menu-navigation-divider"></div>
+                <div class="right-menu-navigation">
+                    
+                </div>
+                <div class="right-menu-navigation-divider"></div>
+            </div>            
         </div>
     </div>
 </div> 
